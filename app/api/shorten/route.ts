@@ -37,7 +37,7 @@ export async function POST(request: Request) {
 
     return NextResponse.json({
       shortCode,
-      shortUrl: `${process.env.NEXT_PUBLIC_SITE_URL}/${shortCode}`,
+      shortUrl: `${process.env.VERCEL_URL}/${shortCode}`,
     });
   } catch (error) {
     if (error instanceof z.ZodError) {
