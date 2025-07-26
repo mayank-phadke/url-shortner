@@ -83,6 +83,7 @@ export default function Home() {
                 {shortUrl}
               </a>
             </p>
+            <p>1000 random clicks have been generated for demo</p>
             <Button
               type="button"
               className="w-full md:w-auto"
