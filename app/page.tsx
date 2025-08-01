@@ -34,7 +34,7 @@ export default function Home() {
   };
 
   return (
-    <main className="min-h-screen w-full flex flex-col items-center justify-center bg-background px-4">
+    <main className="min-h-screen w-full flex flex-col items-center justify-center px-4">
       <section className="w-full max-w-lg mx-auto flex flex-col items-center gap-6 py-10">
         <h1 className="text-4xl font-bold text-center mb-2">
           Welcome to ShortLink
