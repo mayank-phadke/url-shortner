@@ -34,12 +34,12 @@ export async function GET(
     if (ip !== "unknown" && ip !== "::1") {
       console.log("Fetching geo data for IP:", ip);
 
-      const geoResponse = await fetch(`http://ipapi.com/${ip}`);
-      console.log("Geo data:", geoResponse);
-      geoData = await geoResponse.json();
-
-      if (geoData.status !== "success") {
-        console.error("Failed to fetch geo data:", geoData.message);
+      try {
+        const geoResponse = await fetch(`https://api.ipapi.com/${ip}?access_key=${process.env.IPAPI_ACCESS_KEY}`);
+        geoData = await geoResponse.json();
+      } catch (geoError) {
+        console.error("Failed to fetch geo data:", geoError);
+        geoData = { status: "error", message: "Geo data fetch failed" };
       }
     }
 
